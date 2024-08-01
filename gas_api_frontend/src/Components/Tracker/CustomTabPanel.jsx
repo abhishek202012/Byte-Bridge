@@ -12,6 +12,17 @@ function CustomTabPanel(props) {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
+
+    const ethPriceInUsd = 3168.42; // Current price of 1 ETH in USD
+
+    const convertGweiToUsd = (gwei, ethPriceInUsd) => {
+        const eth = gwei * 1e-9; // Convert Gwei to ETH
+        const usd = eth * ethPriceInUsd; // Convert ETH to USD
+        return usd; // Format to 2 decimal places
+    };
+
+
+
     useEffect(() => {
         const fetchGasFees = async () => {
             setLoading(true);
@@ -99,7 +110,8 @@ function CustomTabPanel(props) {
                                 ~ $ 0.18 USD | {gasFees.high.minWaitTimeEstimate / 1000} sec
                             </h4>
                             <div className='mini_box'>
-                                <Typography>Priority Fee: {parseFloat(gasFees.high.suggestedMaxPriorityFeePerGas).toFixed(2)}</Typography>
+                                <Typography>Priority Fee: {convertGweiToUsd(gasFees.high.suggestedMaxPriorityFeePerGas, ethPriceInUsd)}</Typography>
+
                                 <Typography>Max Fee: {parseFloat(gasFees.high.suggestedMaxFeePerGas).toFixed(2)}</Typography>
 
                             </div>
@@ -113,6 +125,8 @@ function CustomTabPanel(props) {
                             </span>
                             <span className='nums'>
                                 {/* <h2>{gasFees.medium.suggestedMaxPriorityFeePerGas}</h2> */}
+
+                                {/* <p>Base Fee: {convertGweiToUsd(parseFloat(gasFees?.estimatedBaseFee), ethPriceInUsd)} USD</p> */}
                                 <h2>2</h2>
 
                             </span>
@@ -121,7 +135,7 @@ function CustomTabPanel(props) {
                                 ~ $ 0.23 USD | {gasFees.medium.minWaitTimeEstimate / 1000} sec
                             </h4>
                             <div className='mini_box'>
-                                <Typography>Priority Fee: {parseFloat(gasFees.medium.suggestedMaxPriorityFeePerGas).toFixed(2)}</Typography>
+                                <Typography>Priority Fee: {convertGweiToUsd(gasFees.medium.suggestedMaxPriorityFeePerGas, ethPriceInUsd)}</Typography>
                                 <Typography>Max Fee: {parseFloat(gasFees.medium.suggestedMaxFeePerGas).toFixed(2)}</Typography>
                             </div>
                         </div>
