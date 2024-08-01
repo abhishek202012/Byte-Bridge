@@ -1,0 +1,18 @@
+.social_icons {
+    display: flex;
+    justify-content: space-between;
+    width: 263px;
+    height: 46.94px
+}
+
+/* FacebookButton.css */
+.facebook , .twitter , .slack , .discord{
+    width: 39.12px;
+    height: 39.12px;
+    background: linear-gradient(45deg, #009DDA, #63BA47);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  
+}

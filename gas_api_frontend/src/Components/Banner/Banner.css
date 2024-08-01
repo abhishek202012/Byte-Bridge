@@ -1,0 +1,51 @@
+.banner {
+    background-image: url('../../images/banner2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 840px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+    box-sizing: border-box;
+    position: relative;
+    color: white;
+
+}
+
+.banner-content {
+    width: 1420px;
+    margin: auto;
+
+}
+
+.title {
+    color: white;
+    width: 977px;
+    font-weight: 700;
+    font-size: 68px;
+    line-height: 130.8px;
+    margin: 0;
+}
+
+.subtitle {
+    background: linear-gradient(45deg, #009DDA, #63BA47);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    width: 977px;
+    font-weight: 900px;
+    font-size: 58px;
+    margin: 0px;
+}
+
+.description {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    width: 718px;
+    height: 60px;
+    opacity: 80%;
+}
